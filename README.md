@@ -1,4 +1,4 @@
-This webapp is used as a university project. It main functionality is to show my ability to create my own applications. One could use this app, as a basic reminder, where one can update, delete items. 
+This webapp is used as a university project. It main functionality is to show my ability to create my own web applications. One could use this app, as a basic reminder, where one can update and delete items. 
 
 In order that this application is working (handling data), one need to use the API created here: https://github.com/NateCode98/se19-api
 

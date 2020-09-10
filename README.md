@@ -1,3 +1,9 @@
+This webapp is used as a university project. It main functionality is to show my ability to create my own applications. One could use this app, as a basic reminder, where one can update, delete items. 
+
+In order that this application is working (handling data), one need to use the API created here: https://github.com/NateCode98/se19-api
+
+The following is copied from "Create React App". Please follow. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

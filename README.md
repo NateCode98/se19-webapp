@@ -1,8 +1,14 @@
-This webapp is used as a university project. It main functionality is to show my ability to create my own web applications. One could use this app, as a basic reminder, where one can update and delete items. 
+This webapp is used as a university project. It main functionality is to show my ability to create my own web applications. One could use this app, as a basic reminder, where one can update and delete items. The notes / calls will be shared with everyone using this app.
+
+The app follows a MERN stack. This stack consists of a MongoDB (M) document database, Express.js (E) which is a back-end web application framework, React (R) which is a JavaScript library for building user interfaces and Node.js (N). Furthermore Mongoose is used, which allow one to not host the Mongo database locally, but directly online in the cloud.
+
+Running the app locally requires to change the axios.defaults.baseURL to localhost. Also, "config" within the react-auth0-spa needs to be updated. Please find more under: http://auth0.com/
 
 In order that this application is working (handling data), one need to use the API created here: https://github.com/NateCode98/se19-api
 
-The following is copied from "Create React App". Please follow. 
+The application is live under: https://nates-notes-app.herokuapp.com/
+
+The following is copied from "Create React App". Please follow.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

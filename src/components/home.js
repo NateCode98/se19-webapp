@@ -12,6 +12,8 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import NavBar from "./NavBar";
 
+axios.defaults.baseURL = 'http://localhost:5000/'
+
 //design
 const styles = {
   form: {
@@ -49,7 +51,7 @@ class Home extends Component {
   }
   //get all items
   componentDidMount() {
-    axios.get("http://localhost:5000/items/").then((res) => {
+    axios.get("/items/").then((res) => {
       const items = res.data;
       this.setState({ items });
     });
@@ -68,7 +70,7 @@ class Home extends Component {
   addItem() {
     //create item with unique id
     const newItem = {
-      id: 1 + Math.random(),
+      id: Math.floor(Math.random() * 1000000000).toString(),
       date: this.state.startDate.toString(),
       text: this.state.currentItem.text.slice(),
     };
@@ -80,7 +82,7 @@ class Home extends Component {
     }));
 
     axios
-      .post("http://localhost:5000/items/add", newItem)
+      .post("/items/add", newItem)
       .then((res) => console.log(res.data));
   }
   deleteItem(id) {
@@ -91,7 +93,7 @@ class Home extends Component {
 
     this.setState({ items: updatedList });
 
-    axios.delete("http://localhost:5000/items/" + id).then((response) => {
+    axios.delete("/items/" + id).then((response) => {
       console.log(response.data);
     });
   }
@@ -111,7 +113,7 @@ class Home extends Component {
     const updateText = items.find((item) => item.id == id).updateText;
 
     axios
-      .put("http://localhost:5000/items/" + id, { text: updateText })
+      .put("/items/" + id, { text: updateText })
       .then((response) => {
         console.log(response.data);
         items.find((item) => item.id == id).text = updateText;

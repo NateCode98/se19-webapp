@@ -14,7 +14,7 @@ export class Auth0Provider extends Component {
     config = {
         domain: "natethegreat.eu.auth0.com",
         client_id: "bm35WCa2jie03CWDx8JdKgZFWbwP1so6",
-        redirect_uri:"http://localhost:3000/homescreen/"
+        redirect_uri:"https://nates-notes-app.herokuapp.com/homescreen/"
     };
     componentDidMount() {
         this.initializeAuth0();

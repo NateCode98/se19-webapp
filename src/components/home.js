@@ -12,7 +12,7 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import NavBar from "./NavBar";
 
-axios.defaults.baseURL = 'http://localhost:5000/'
+axios.defaults.baseURL = 'https://nates-notes-api.herokuapp.com/'
 
 //design
 const styles = {
@@ -110,14 +110,15 @@ class Home extends Component {
   //update item
   updateItem(id) {
     const items = [...this.state.items];
-    const updateText = items.find((item) => item.id == id).updateText;
+    const item = items.find((item) => item.id == id)
+    const updateText = item.updateText;
 
     axios
-      .put("/items/" + id, { text: updateText })
+      .put("/items/" + id, { ...item, text: updateText })
       .then((response) => {
         console.log(response.data);
-        items.find((item) => item.id == id).text = updateText;
-        items.find((item) => item.id == id).updateText = "";
+        item.text = updateText;
+        item.updateText = "";
         this.setState({
           items,
         });
